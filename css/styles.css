@@ -260,6 +260,24 @@ a { color: inherit; }
   margin-bottom: 36px;
 }
 
+.offer-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(233, 178, 91, 0.13);
+  border: 1.5px dashed rgba(233, 178, 91, 0.65);
+  color: #f3d9a8;
+  font-size: 16.5px;
+  font-weight: 500;
+  padding: 12px 18px;
+  border-radius: 12px;
+  margin-bottom: 32px;
+}
+
+.offer-line svg { color: var(--honey-bright); flex: none; }
+
+.offer-line strong { color: var(--honey-bright); }
+
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 40px; }
 
 .hero-points {
