@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #122a42; }
+  .card {
+    position: fixed; top: 0; left: 0;
+    width: 1200px; height: 630px;
+    background:
+      radial-gradient(900px 500px at 82% -10%, rgba(216,154,63,0.20), transparent 60%),
+      linear-gradient(160deg, #122a42 0%, #1a3a59 70%, #24496d 100%);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 0 80px;
+    font-family: Inter, sans-serif;
+    overflow: hidden;
+  }
+  .rings { position: absolute; right: -140px; top: -120px; opacity: 0.5; }
+  .brandrow { display: flex; align-items: center; gap: 22px; margin-bottom: 38px; }
+  .brandrow svg { width: 92px; height: 92px; }
+  .bname { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 64px; letter-spacing: 3px; color: #fff; line-height: 1; }
+  .bsub { font-size: 24px; letter-spacing: 10px; color: #e9b25b; font-weight: 600; margin-top: 8px; }
+  h1 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 58px; text-transform: uppercase; color: #fff; line-height: 1.1; margin-bottom: 26px; max-width: 950px; }
+  h1 .gold { color: #e9b25b; }
+  .row { display: flex; gap: 40px; align-items: center; font-size: 27px; color: #cdd8e3; font-weight: 500; }
+  .row .phone { color: #e9b25b; font-weight: 700; font-family: 'Barlow Condensed', sans-serif; font-size: 38px; letter-spacing: 1px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <svg class="rings" width="700" height="700" viewBox="0 0 700 700" fill="none">
+    <g stroke="rgba(233,178,91,0.35)" stroke-dasharray="8 8">
+      <circle cx="350" cy="350" r="120" stroke-width="2.5"/>
+      <circle cx="350" cy="350" r="220" stroke-width="2"/>
+      <circle cx="350" cy="350" r="330" stroke-width="1.6"/>
+    </g>
+    <circle cx="350" cy="350" r="12" fill="#d89a3f"/>
+  </svg>
+  <div class="brandrow">
+    <svg viewBox="0 0 48 48" fill="none">
+      <path d="M24 3C15.2 3 8 10.2 8 19c0 11 16 26 16 26s16-15 16-26c0-8.8-7.2-16-16-16z" fill="#d89a3f"/>
+      <circle cx="24" cy="19" r="10.5" fill="#122a42"/>
+      <circle cx="24" cy="19" r="5" stroke="#e9b25b" stroke-width="2.5"/>
+      <circle cx="24" cy="19" r="1.7" fill="#e9b25b"/>
+    </svg>
+    <div>
+      <div class="bname">WAYPOINT</div>
+      <div class="bsub">MEDICAL TRANSPORT</div>
+    </div>
+  </div>
+  <h1>Medical transportation that shows up on time <span class="gold">and walks you all the way in.</span></h1>
+  <div class="row">
+    <span class="phone">(330) 942-7306</span>
+    <span>Serving Stark County &amp; Northeast Ohio</span>
+  </div>
+</div>
+</body>
+</html>

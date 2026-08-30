@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: letter; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: Inter, sans-serif; color: #23303d; font-size: 12.5px; line-height: 1.45; }
+  .page { width: 8.5in; height: 11in; padding: 0.45in 0.55in; display: flex; flex-direction: column; }
+  .head { display: flex; align-items: center; justify-content: space-between; background: #122a42; border-radius: 12px; padding: 18px 24px; color: #fff; }
+  .brandrow { display: flex; align-items: center; gap: 13px; }
+  .brandrow svg { width: 46px; height: 46px; }
+  .bname { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 27px; letter-spacing: 1.5px; line-height: 1; }
+  .bsub { font-size: 10.5px; letter-spacing: 4px; color: #e9b25b; font-weight: 600; margin-top: 3px; }
+  .head-contact { text-align: right; font-size: 11.5px; color: #cdd8e3; }
+  .head-contact .phone { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; color: #e9b25b; letter-spacing: 0.5px; }
+  h2 { font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; font-size: 17px; letter-spacing: 1px; color: #122a42; border-bottom: 2px solid #d89a3f; padding-bottom: 4px; margin: 16px 0 8px; }
+  .tagline { text-align: center; font-size: 13.5px; color: #55636f; margin-top: 10px; }
+  .tagline strong { color: #122a42; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  th { font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; letter-spacing: 1px; text-align: left; background: #122a42; color: #e9b25b; padding: 6px 12px; font-size: 12.5px; }
+  th:last-child, td:last-child { text-align: right; white-space: nowrap; font-weight: 700; color: #1a3a59; }
+  td { padding: 5.5px 12px; border-bottom: 1px solid #e7dec9; }
+  td .sub { font-weight: 400; color: #55636f; font-size: 10.5px; }
+  .cols { display: flex; gap: 22px; }
+  .col { flex: 1; }
+  ul { list-style: none; }
+  ul li { padding: 3px 0 3px 18px; position: relative; }
+  ul li::before { content: "\2713"; position: absolute; left: 0; color: #d89a3f; font-weight: 700; }
+  .rescue { background: #122a42; color: #fff; border-radius: 10px; padding: 12px 18px; margin-top: 14px; }
+  .rescue h3 { font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; letter-spacing: 1px; font-size: 15px; color: #e9b25b; margin-bottom: 3px; }
+  .rescue p { font-size: 11.5px; color: #cdd8e3; }
+  .rescue .phone { color: #e9b25b; font-weight: 700; }
+  .foot { margin-top: auto; border-top: 1.5px solid #e7dec9; padding-top: 8px; display: flex; justify-content: space-between; font-size: 10px; color: #55636f; }
+  .launch { background: rgba(216,154,63,0.14); border: 1.5px dashed #d89a3f; border-radius: 10px; padding: 9px 14px; font-size: 11.5px; margin-top: 12px; color: #23303d; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="head">
+    <div class="brandrow">
+      <svg viewBox="0 0 48 48" fill="none">
+        <path d="M24 3C15.2 3 8 10.2 8 19c0 11 16 26 16 26s16-15 16-26c0-8.8-7.2-16-16-16z" fill="#d89a3f"/>
+        <circle cx="24" cy="19" r="10.5" fill="#122a42"/>
+        <circle cx="24" cy="19" r="5" stroke="#e9b25b" stroke-width="2.5"/>
+        <circle cx="24" cy="19" r="1.7" fill="#e9b25b"/>
+      </svg>
+      <div>
+        <div class="bname">WAYPOINT</div>
+        <div class="bsub">MEDICAL TRANSPORT</div>
+      </div>
+    </div>
+    <div class="head-contact">
+      <div class="phone">(330) 942-7306</div>
+      <div>john@gowaypointmedical.com</div>
+      <div>gowaypointmedical.com</div>
+    </div>
+  </div>
+
+  <p class="tagline"><strong>Safe, on-time, door-through-door medical transportation.</strong> Based in Louisville, Ohio. Serving Stark County &amp; Northeast Ohio. Hours: Mon-Fri 5:00 AM to 5:00 PM, Sat mornings, closed Sunday.</p>
+
+  <h2>Rates</h2>
+  <table>
+    <tr><th>Service</th><th>Rate</th></tr>
+    <tr><td>Ambulatory ride, base fare (includes first 5 miles)</td><td>$45</td></tr>
+    <tr><td>Each additional mile</td><td>$2.50</td></tr>
+    <tr><td>Wheelchair transport, base fare</td><td>$80</td></tr>
+    <tr><td>Each additional mile</td><td>$3.50</td></tr>
+    <tr><td>Wait time (first 15 minutes free)</td><td>$15 per 15 min</td></tr>
+    <tr><td>Round trip</td><td>10% off the return leg</td></tr>
+    <tr><td>Evenings (after 6 PM) and Saturdays</td><td>+ $15</td></tr>
+    <tr><td>Long trips, over 25 miles</td><td>$2.00/mi ambulatory &middot; $3.00/mi wheelchair</td></tr>
+    <tr><td>Extra stop on the way (pharmacy, etc.)</td><td>$10</td></tr>
+    <tr><td>Veterans &amp; active military</td><td>15% off</td></tr>
+    <tr><td>10-Ride Package (prepaid)</td><td>save 8%</td></tr>
+  </table>
+
+  <div class="cols">
+    <div class="col">
+      <h2>Always Free</h2>
+      <ul>
+        <li>A family member or caregiver rides along</li>
+        <li>Walkers, canes, oxygen, service animals</li>
+        <li>Door-through-door assistance and check-in walk-in</li>
+        <li>Car seat for a grandkid tagging along (bring the seat)</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h2>For Facilities</h2>
+      <ul>
+        <li>Recurring standing orders (dialysis, therapy)</li>
+        <li>On-time early morning pickups, from 5:00 AM</li>
+        <li>Same-day discharge transport</li>
+        <li>Contract rates &amp; monthly billing available</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="rescue">
+    <h3>The Rescue Line</h3>
+    <p>When your usual transport falls through, call us. If we can get there, we will. And we answer the phone. Save <span class="phone">(330) 942-7306</span> at the front desk for the day you need it.</p>
+  </div>
+
+  <div class="launch">Service begins the week of <strong>November 24, 2026</strong>. Facilities can reserve standing-order slots now, at no cost and no obligation. Call and ask for John.</div>
+
+  <div class="foot">
+    <span>Waypoint Medical Transport &middot; A service of Noffsinger Transport LLC &middot; Louisville, Ohio &middot; Veteran-owned &amp; operated</span>
+    <span>Registered on SAM.gov &middot; UEI TRBJWH9C5DX7</span>
+  </div>
+</div>
+</body>
+</html>
