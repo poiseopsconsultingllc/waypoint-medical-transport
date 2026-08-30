@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Waypoint Medical Transport | Canton, Ohio</title>
+<meta name="description" content="Call or text Waypoint Medical Transport at (330) 942-7306 to book a ride or delivery anywhere in Ohio. Veteran-owned, based in Canton.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <path d="M24 3C15.2 3 8 10.2 8 19c0 11 16 26 16 26s16-15 16-26c0-8.8-7.2-16-16-16z" fill="#d4a537"/>
+        <circle cx="24" cy="19" r="10.5" fill="#0a1c30"/>
+        <path d="M24 11.5l2.2 5.3 5.8.5-4.4 3.8 1.3 5.7-4.9-3-4.9 3 1.3-5.7-4.4-3.8 5.8-.5z" fill="#e8bc4f"/>
+      </svg>
+      <span>
+        <span class="brand-name">Waypoint</span>
+        <span class="brand-sub">Medical Transport</span>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <a class="nav-phone" href="tel:+13309427306">(330) 942-7306</a>
+    <a class="btn-sam" href="https://sam.gov/workspace" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+      SAM.gov Login
+    </a>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="kicker">Contact</span>
+      <h1>Let's Get You There</h1>
+      <p>One number. One owner. Call, text, or fill out the ride form and it lands straight in John's pocket.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <h3>Reach Waypoint</h3>
+          <a class="contact-big-phone" href="tel:+13309427306">(330) 942-7306</a>
+          <p class="hours">Canton, Ohio &middot; Serving the whole state</p>
+          <div class="contact-actions">
+            <a class="btn btn-gold" href="tel:+13309427306">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+              Call Now
+            </a>
+            <a class="btn btn-ghost" href="sms:+13309427306">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/></svg>
+              Text Us
+            </a>
+          </div>
+          <hr class="contact-divider">
+          <h3 style="font-size: 20px;">Agencies &amp; Contract Officers</h3>
+          <p class="fine">Noffsinger Services LLC is set up on SAM.gov for government transport and courier contracts. Call the number above or open <a href="https://sam.gov/workspace" target="_blank" rel="noopener" style="color: #e8bc4f;">SAM.gov</a> to find us there.</p>
+        </div>
+
+        <div class="form-panel">
+          <h3>Request a Ride or Delivery</h3>
+          <p>Fill this out and hit the button. It opens a text to Waypoint with everything filled in, so all you do is press send.</p>
+          <form id="ride-form">
+            <div class="field-row">
+              <div class="field">
+                <label for="f-name">Your name</label>
+                <input id="f-name" type="text" placeholder="First and last name" autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="f-type">What do you need?</label>
+                <select id="f-type">
+                  <option>Ride to a VA appointment</option>
+                  <option>Ride to another appointment</option>
+                  <option>Medical delivery / courier run</option>
+                  <option>Recurring rides</option>
+                  <option>Contract / agency work</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-from">Pickup city</label>
+                <input id="f-from" type="text" placeholder="Canton, Massillon, Akron...">
+              </div>
+              <div class="field">
+                <label for="f-to">Going to</label>
+                <input id="f-to" type="text" placeholder="Cleveland VA, Columbus clinic...">
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-when">Date and time</label>
+              <input id="f-when" type="text" placeholder="Tuesday the 8th, appointment at 10:30 AM">
+            </div>
+            <div class="check-row">
+              <input id="f-wheel" type="checkbox">
+              <label for="f-wheel" style="margin: 0; font-weight: 500;">Wheelchair or extra help needed</label>
+            </div>
+            <div class="field">
+              <label for="f-notes">Anything else?</label>
+              <textarea id="f-notes" rows="3" placeholder="Round trip, special instructions, questions..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold" style="width: 100%;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
+              Text This to Waypoint
+            </button>
+            <p class="form-hint">The button opens your messaging app with the request written out and addressed to (330) 942-7306. Nothing sends until you press send. On a computer? Just call instead.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <path d="M24 3C15.2 3 8 10.2 8 19c0 11 16 26 16 26s16-15 16-26c0-8.8-7.2-16-16-16z" fill="#d4a537"/>
+            <circle cx="24" cy="19" r="10.5" fill="#0a1c30"/>
+            <path d="M24 11.5l2.2 5.3 5.8.5-4.4 3.8 1.3 5.7-4.9-3-4.9 3 1.3-5.7-4.4-3.8 5.8-.5z" fill="#e8bc4f"/>
+          </svg>
+          <span>
+            <span class="brand-name">Waypoint</span>
+            <span class="brand-sub">Medical Transport</span>
+          </span>
+        </div>
+        <p>Getting our veterans to their VA appointments, on time and with care. Rides and medical deliveries across Ohio.</p>
+        <span class="footer-vet">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.6 6.3 6.8.5-5.2 4.4 1.6 6.6L12 16.2 6.2 19.8l1.6-6.6-5.2-4.4 6.8-.5z"/></svg>
+          Veteran-Owned Business
+        </span>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <ul>
+          <li><a href="tel:+13309427306">(330) 942-7306</a></li>
+          <li><a href="sms:+13309427306">Text us anytime</a></li>
+          <li>Canton, Ohio</li>
+          <li><a href="https://sam.gov/workspace" target="_blank" rel="noopener">SAM.gov Login</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>&copy; <span id="year">2026</span> Noffsinger Services LLC. Waypoint Medical Transport is a service line of Noffsinger Services LLC, Canton, Ohio.</span>
+      <span>Serving all of Ohio</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
