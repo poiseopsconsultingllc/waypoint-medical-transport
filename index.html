@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Waypoint Medical Transport | Veteran-Owned Rides &amp; Medical Deliveries | Canton, Ohio</title>
-<meta name="description" content="Veteran-owned non-emergency medical transport based in Canton, Ohio. Rides to VA appointments, wheelchair-friendly options, and medical deliveries across the whole state. Call (330) 942-7306.">
+<title>Medical Transportation Canton OH | NEMT Stark County | Waypoint Medical Transport</title>
+<meta name="description" content="Safe, on-time non-emergency medical transportation in Canton, North Canton, Massillon, Alliance and all of Stark County, Ohio. Door-through-door rides to dialysis, doctor visits and therapy. Call (330) 942-7306.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,9 +17,10 @@
   <div class="wrap nav">
     <a class="brand" href="index.html">
       <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-        <path d="M24 3C15.2 3 8 10.2 8 19c0 11 16 26 16 26s16-15 16-26c0-8.8-7.2-16-16-16z" fill="#d4a537"/>
-        <circle cx="24" cy="19" r="10.5" fill="#0a1c30"/>
-        <path d="M24 11.5l2.2 5.3 5.8.5-4.4 3.8 1.3 5.7-4.9-3-4.9 3 1.3-5.7-4.4-3.8 5.8-.5z" fill="#e8bc4f"/>
+        <path d="M24 3C15.2 3 8 10.2 8 19c0 11 16 26 16 26s16-15 16-26c0-8.8-7.2-16-16-16z" fill="#d89a3f"/>
+        <circle cx="24" cy="19" r="10.5" fill="#122a42"/>
+        <circle cx="24" cy="19" r="5" stroke="#e9b25b" stroke-width="2.5"/>
+        <circle cx="24" cy="19" r="1.7" fill="#e9b25b"/>
       </svg>
       <span>
         <span class="brand-name">Waypoint</span>
@@ -29,14 +30,16 @@
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="services.html">Services</a></li>
+      <li><a href="services.html">Services &amp; Pricing</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="facilities.html">For Facilities</a></li>
+      <li class="nav-links-pay"><a href="pay.html">Pay My Fare</a></li>
     </ul>
     <a class="nav-phone" href="tel:+13309427306">(330) 942-7306</a>
-    <a class="btn-sam" href="https://sam.gov/workspace" target="_blank" rel="noopener">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
-      SAM.gov Login
+    <a class="btn-payfare" href="pay.html">Pay My Fare</a>
+    <a class="btn-book" href="book.html">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14z"/></svg>
+      Book a Ride
     </a>
   </div>
 </header>
@@ -49,111 +52,147 @@
       <g stroke="rgba(255,255,255,0.05)" fill="none" stroke-width="1.5">
         <circle cx="1020" cy="140" r="90"/><circle cx="1020" cy="140" r="170"/><circle cx="1020" cy="140" r="260"/><circle cx="1020" cy="140" r="360"/>
       </g>
-      <g stroke="rgba(212,165,55,0.25)" stroke-width="1.5">
+      <g stroke="rgba(216,154,63,0.25)" stroke-width="1.5">
         <path d="M1020 40v200M920 140h200" stroke-linecap="round"/>
       </g>
     </svg>
     <div class="wrap">
       <div class="hero-inner">
-        <span class="badge-vet">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.6 6.3 6.8.5-5.2 4.4 1.6 6.6L12 16.2 6.2 19.8l1.6-6.6-5.2-4.4 6.8-.5z"/></svg>
-          Veteran-Owned &middot; Canton, Ohio
-        </span>
-        <h1>On time. With care.<br><span class="gold">Every mile.</span></h1>
-        <p class="hero-tagline">Getting our veterans to their VA appointments, on time and with care. Rides and medical deliveries you can count on, anywhere in Ohio.</p>
+        <span class="pill-notice">Now scheduling rides for late November 2026</span>
+        <h1>Safe, on-time medical transportation, <span class="gold">door through door.</span></h1>
+        <p class="hero-tagline">Serving Stark County and surrounding Northeast Ohio communities.</p>
         <div class="hero-ctas">
           <a class="btn btn-gold" href="tel:+13309427306">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
-            Call (330) 942-7306
+            (330) 942-7306 &middot; Tap to Call
           </a>
-          <a class="btn btn-ghost" href="services.html">See Our Services</a>
+          <a class="btn btn-ghost" href="book.html">Book a Ride</a>
         </div>
         <ul class="hero-points">
-          <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>Door to door, every trip</li>
-          <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>Wheelchair-friendly options</li>
-          <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>Serving all of Ohio</li>
+          <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>Door-through-door, always</li>
+          <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>Wheelchair-accessible van</li>
+          <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>Caregivers ride along free</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- ================= SERVICE AREA MAP ================= -->
+  <!-- ================= THE PROMISE ================= -->
+  <section class="section section-paper">
+    <div class="wrap">
+      <span class="kicker">The Promise</span>
+      <h2>We don't honk from the curb.</h2>
+      <div class="promise">
+        <p>Getting to dialysis, doctor visits, and therapy shouldn't be the hardest part of your care. Waypoint Medical Transport gets you there safely, comfortably, and on time. Every time.</p>
+        <p>We come to your door, help you to the vehicle, and walk you all the way inside to check-in.</p>
+        <p class="sig">That's door-through-door service. That's Waypoint.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRUST BADGES ================= -->
   <section class="section">
     <div class="wrap">
+      <span class="kicker">Why Families Choose Waypoint</span>
+      <h2>Care you can count on.</h2>
+      <ul class="badge-row" style="margin-top: 28px;">
+        <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>A medical professional behind the wheel</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>Door-through-door, always</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>On time, every time</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>Fully insured, background-checked, CPR-certified</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>A real wheelchair-accessible van</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>Locally owned in Louisville, Ohio</li>
+      </ul>
+      <p style="margin-top: 26px;"><a class="btn btn-navy" href="about.html">Meet the Owner &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- ================= SERVICE AREA MAP ================= -->
+  <section class="section section-paper">
+    <div class="wrap">
       <span class="kicker">Service Area</span>
-      <h2>Based in Canton. Ready for all of Ohio.</h2>
-      <p class="section-intro">Home base is Canton, and the reach goes as far as the job does. VA runs to Cleveland, Columbus, Cincinnati, Dayton and everywhere between.</p>
+      <h2>Based in Louisville. Serving Stark County and beyond.</h2>
+      <p class="section-intro">Canton, North Canton, Massillon, Alliance, Hartville, Green, Akron, Dover, New Philadelphia and everywhere between. If you need a longer trip, we do those by arrangement.</p>
       <div class="map-grid">
         <figure class="map-figure">
-          <svg viewBox="0 0 720 800" role="img" aria-label="Map of Ohio showing Waypoint's home base in Canton with service rings covering the whole state">
-            <defs>
-              <clipPath id="ohioClip">
-                <path d="M95 112 L250 98 Q285 118 315 130 Q360 132 395 124 Q435 140 470 146 Q520 118 560 92 Q592 72 616 64 L622 318 Q628 358 612 390 Q590 412 585 425 Q596 448 592 470 Q574 490 555 505 Q532 522 520 545 Q510 568 498 585 Q478 606 455 625 Q436 648 420 668 Q402 688 385 705 Q372 726 355 738 Q334 720 318 700 Q286 684 255 672 Q226 660 200 650 Q172 640 150 632 Q130 626 95 611 Z"/>
-              </clipPath>
-            </defs>
-
-            <!-- state shape -->
-            <path d="M95 112 L250 98 Q285 118 315 130 Q360 132 395 124 Q435 140 470 146 Q520 118 560 92 Q592 72 616 64 L622 318 Q628 358 612 390 Q590 412 585 425 Q596 448 592 470 Q574 490 555 505 Q532 522 520 545 Q510 568 498 585 Q478 606 455 625 Q436 648 420 668 Q402 688 385 705 Q372 726 355 738 Q334 720 318 700 Q286 684 255 672 Q226 660 200 650 Q172 640 150 632 Q130 626 95 611 Z"
-              fill="#143656" stroke="#d4a537" stroke-width="2.5" stroke-linejoin="round"/>
-
-            <!-- radius rings clipped to the state -->
-            <g clip-path="url(#ohioClip)" fill="none" stroke="#e8bc4f" stroke-dasharray="7 7">
-              <circle cx="519" cy="286" r="118" stroke-width="2.4" opacity="0.85"/>
-              <circle cx="519" cy="286" r="236" stroke-width="2" opacity="0.55"/>
-              <circle cx="519" cy="286" r="354" stroke-width="1.8" opacity="0.38"/>
-              <circle cx="519" cy="286" r="472" stroke-width="1.6" opacity="0.26"/>
+          <svg viewBox="0 0 800 780" role="img" aria-label="Map showing Waypoint's home base in Louisville, Ohio with service rings at 15, 30 and 60 miles covering Stark County and Northeast Ohio">
+            <!-- crosshair -->
+            <g stroke="rgba(255,255,255,0.06)" stroke-width="1.5">
+              <path d="M400 30v720M70 420h660"/>
             </g>
-
+            <!-- rings -->
+            <g fill="none" stroke="#e9b25b" stroke-dasharray="7 7">
+              <circle cx="400" cy="420" r="105" stroke-width="2.4" opacity="0.85"/>
+              <circle cx="400" cy="420" r="210" stroke-width="2" opacity="0.55"/>
+              <circle cx="400" cy="420" r="420" stroke-width="1.8" opacity="0.32"/>
+            </g>
             <!-- ring labels -->
-            <g font-family="Inter, sans-serif" font-size="15" fill="#e8bc4f" opacity="0.9">
-              <text x="404" y="270" text-anchor="middle">50 mi</text>
-              <text x="290" y="252" text-anchor="middle" opacity="0.8">100 mi</text>
-              <text x="176" y="234" text-anchor="middle" opacity="0.7">150 mi</text>
+            <g font-family="Inter, sans-serif" font-size="15" fill="#e9b25b" text-anchor="middle">
+              <text x="400" y="303" opacity="0.9">15 mi</text>
+              <text x="400" y="198" opacity="0.75">30 mi</text>
+              <text x="648" y="730" opacity="0.6">60 mi</text>
+            </g>
+            <!-- compass -->
+            <g font-family="Inter, sans-serif" font-size="16" fill="#9aa9ba">
+              <text x="742" y="102" text-anchor="middle">N</text>
+              <path d="M742 110v26" stroke="#9aa9ba" stroke-width="2"/>
+              <path d="M742 106l-6 12h12z" fill="#e9b25b"/>
             </g>
 
-            <!-- other cities -->
-            <g font-family="Inter, sans-serif" font-size="17" fill="#dbe4ee">
-              <circle cx="481" cy="152" r="5.5" fill="#f7f2e7"/><text x="470" y="138">Cleveland</text>
-              <circle cx="502" cy="232" r="5" fill="#f7f2e7"/><text x="438" y="222">Akron</text>
-              <circle cx="609" cy="228" r="5" fill="#f7f2e7"/><text x="546" y="212">Youngstown</text>
-              <circle cx="251" cy="123" r="5.5" fill="#f7f2e7"/><text x="212" y="152">Toledo</text>
-              <circle cx="321" cy="446" r="5.5" fill="#f7f2e7"/><text x="253" y="440">Columbus</text>
-              <circle cx="173" cy="485" r="5" fill="#f7f2e7"/><text x="126" y="472">Dayton</text>
-              <circle cx="133" cy="611" r="5.5" fill="#f7f2e7"/><text x="120" y="592">Cincinnati</text>
+            <!-- cities -->
+            <g font-family="Inter, sans-serif" font-size="14.5" fill="#dbe4ee">
+              <circle cx="268" cy="58" r="5.5" fill="#f8f0e0"/><text x="278" y="62">Cleveland</text>
+              <circle cx="428" cy="261" r="5" fill="#f8f0e0"/><text x="438" y="265">Ravenna</text>
+              <circle cx="335" cy="280" r="5.5" fill="#f8f0e0"/><text x="325" y="284" text-anchor="end">Akron</text>
+              <circle cx="257" cy="320" r="4.5" fill="#f8f0e0"/><text x="247" y="324" text-anchor="end">Barberton</text>
+              <circle cx="336" cy="328" r="4.5" fill="#f8f0e0"/><text x="346" y="332">Green</text>
+              <circle cx="330" cy="361" r="2.5" fill="#f8f0e0" opacity="0.55"/>
+              <circle cx="355" cy="375" r="4.5" fill="#f8f0e0"/><text x="366" y="379">Hartville</text>
+              <circle cx="338" cy="409" r="4.5" fill="#f8f0e0"/><text x="328" y="405" text-anchor="end">North Canton</text>
+              <circle cx="459" cy="398" r="5" fill="#f8f0e0"/><text x="470" y="386">Alliance</text>
+              <circle cx="488" cy="396" r="2.5" fill="#f8f0e0" opacity="0.55"/>
+              <circle cx="532" cy="408" r="4.5" fill="#f8f0e0"/><text x="543" y="427">Salem</text>
+              <circle cx="360" cy="460" r="5.5" fill="#f8f0e0"/><text x="350" y="470" text-anchor="end">Canton</text>
+              <circle cx="292" cy="470" r="5" fill="#f8f0e0"/><text x="283" y="485" text-anchor="end">Massillon</text>
+              <circle cx="303" cy="501" r="4" fill="#f8f0e0"/><text x="294" y="514" text-anchor="end">Navarre</text>
+              <circle cx="449" cy="479" r="4.5" fill="#f8f0e0"/><text x="460" y="483">Minerva</text>
+              <circle cx="450" cy="558" r="4.5" fill="#f8f0e0"/><text x="461" y="562">Carrollton</text>
+              <circle cx="314" cy="604" r="4.5" fill="#f8f0e0"/><text x="304" y="608" text-anchor="end">Dover</text>
+              <circle cx="326" cy="624" r="4.5" fill="#f8f0e0"/><text x="336" y="640">New Philadelphia</text>
             </g>
 
-            <!-- Canton home base -->
+            <!-- Louisville home base -->
             <g>
-              <circle class="home-pulse" cx="519" cy="286" r="10" fill="none" stroke="#e8bc4f" stroke-width="2.5"/>
-              <circle cx="519" cy="286" r="9" fill="#d4a537" stroke="#0a1c30" stroke-width="2.5"/>
-              <path d="M519 279l1.9 4 4.4.4-3.3 2.9 1 4.3-4-2.4-4 2.4 1-4.3-3.3-2.9 4.4-.4z" fill="#0a1c30"/>
-              <text x="540" y="292" font-family="'Barlow Condensed', sans-serif" font-size="26" font-weight="700" fill="#e8bc4f" letter-spacing="1">CANTON</text>
-              <text x="540" y="312" font-family="Inter, sans-serif" font-size="13.5" fill="#dbe4ee" letter-spacing="2">HOME BASE</text>
+              <circle class="home-pulse" cx="400" cy="420" r="10" fill="none" stroke="#e9b25b" stroke-width="2.5"/>
+              <circle cx="400" cy="420" r="9" fill="#d89a3f" stroke="#122a42" stroke-width="2.5"/>
+              <circle cx="400" cy="420" r="3" fill="#122a42"/>
+              <text x="417" y="416" font-family="'Barlow Condensed', sans-serif" font-size="26" font-weight="700" fill="#e9b25b" letter-spacing="1">LOUISVILLE</text>
+              <text x="418" y="436" font-family="Inter, sans-serif" font-size="12.5" fill="#dbe4ee" letter-spacing="2">HOME BASE</text>
             </g>
           </svg>
-          <figcaption class="map-caption">Rings mark <strong>50, 100 and 150 miles</strong> out from Canton. If it is in Ohio, it is in range.</figcaption>
+          <figcaption class="map-caption">Rings mark <strong>15, 30 and 60 miles</strong> from home base. Longer trips by arrangement.</figcaption>
         </figure>
 
         <ul class="reach-list">
           <li>
             <span class="reach-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
             <div>
-              <h3>Rooted in Canton</h3>
-              <p>Stark County is home. Local pickups, local knowledge, and a familiar face at the door.</p>
+              <h3>Stark County, covered</h3>
+              <p>Canton, North Canton, Massillon, Alliance, Louisville, Hartville, Uniontown, Navarre, Minerva, Canal Fulton, East Canton, Perry and Jackson Township.</p>
             </div>
           </li>
           <li>
             <span class="reach-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5l-17 7.5 6.5 2.5L12.5 20l7.5-16.5z"/></svg></span>
             <div>
-              <h3>Statewide range</h3>
-              <p>VA facilities in Cleveland, Columbus, Cincinnati, Dayton and Chillicothe are all within reach.</p>
+              <h3>Summit and surrounding</h3>
+              <p>Green, Akron, Barberton and Springfield Township, plus Dover, New Philadelphia, Carrollton, Salem, Sebring and Ravenna.</p>
             </div>
           </li>
           <li>
             <span class="reach-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1a11 11 0 1 0 11 11A11 11 0 0 0 12 1zm1 11.6l4.6 2.7-.9 1.5L11 13.5V6h2z"/></svg></span>
             <div>
-              <h3>Early, not just on time</h3>
-              <p>Appointments do not wait, so neither do we. Pickup times are planned with a cushion built in.</p>
+              <h3>Long trips by arrangement</h3>
+              <p>Cleveland Clinic main campus, Akron City Hospital, a VA appointment, or an out-of-town specialist. Call us and we'll set it up.</p>
             </div>
           </li>
         </ul>
@@ -162,26 +201,26 @@
   </section>
 
   <!-- ================= EXPLORE TILES ================= -->
-  <section class="section section-paper">
+  <section class="section">
     <div class="wrap">
       <div class="cards">
         <a class="card card-link" href="services.html">
           <span class="card-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 8h-3V6a3 3 0 0 0-3-3H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h1a3 3 0 0 0 6 0h2a3 3 0 0 0 6 0h1a1 1 0 0 0 1-1v-4a1 1 0 0 0-.2-.6l-2-2.7A1 1 0 0 0 20 8zM8 18.5A1.5 1.5 0 1 1 9.5 17 1.5 1.5 0 0 1 8 18.5zm8 0a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5zm1-5.5V10h2.5l1.5 2z"/></svg></span>
-          <h3>Services</h3>
-          <p>VA rides, medical deliveries, wheelchair-friendly trips and contract work.</p>
-          <span class="card-note">See what we do &rarr;</span>
+          <h3>Services &amp; Pricing</h3>
+          <p>Dialysis, doctor visits, discharges, therapy and more, with simple, honest pricing you see before you ride.</p>
+          <span class="card-note">See services &rarr;</span>
         </a>
-        <a class="card card-link" href="about.html">
-          <span class="card-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.6 6.3 6.8.5-5.2 4.4 1.6 6.6L12 16.2 6.2 19.8l1.6-6.6-5.2-4.4 6.8-.5z"/></svg></span>
-          <h3>About</h3>
-          <p>Veteran-owned and run by John Noffsinger of Canton. Meet the man behind the wheel.</p>
-          <span class="card-note">Our story &rarr;</span>
+        <a class="card card-link" href="book.html">
+          <span class="card-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14zM9 14H7v-2h2zm4 0h-2v-2h2zm4 0h-2v-2h2zm-8 4H7v-2h2zm4 0h-2v-2h2z"/></svg></span>
+          <h3>Book a Ride</h3>
+          <p>Call or use the booking form. We schedule up to two weeks ahead, and standing weekly rides are welcome.</p>
+          <span class="card-note">Book now &rarr;</span>
         </a>
-        <a class="card card-link" href="contact.html">
-          <span class="card-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></span>
-          <h3>Contact</h3>
-          <p>Call or text (330) 942-7306, or send a ride request in a few taps.</p>
-          <span class="card-note">Book a ride &rarr;</span>
+        <a class="card card-link" href="pay.html">
+          <span class="card-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4H4V6h16zM4 18v-6h16v6z"/></svg></span>
+          <h3>Pay My Fare</h3>
+          <p>You know your fare before you ride. You or a family member can pay it from anywhere, any time.</p>
+          <span class="card-note">Pay a fare &rarr;</span>
         </a>
       </div>
     </div>
@@ -195,46 +234,55 @@
       <div>
         <div class="footer-brand">
           <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-            <path d="M24 3C15.2 3 8 10.2 8 19c0 11 16 26 16 26s16-15 16-26c0-8.8-7.2-16-16-16z" fill="#d4a537"/>
-            <circle cx="24" cy="19" r="10.5" fill="#0a1c30"/>
-            <path d="M24 11.5l2.2 5.3 5.8.5-4.4 3.8 1.3 5.7-4.9-3-4.9 3 1.3-5.7-4.4-3.8 5.8-.5z" fill="#e8bc4f"/>
+            <path d="M24 3C15.2 3 8 10.2 8 19c0 11 16 26 16 26s16-15 16-26c0-8.8-7.2-16-16-16z" fill="#d89a3f"/>
+            <circle cx="24" cy="19" r="10.5" fill="#122a42"/>
+            <circle cx="24" cy="19" r="5" stroke="#e9b25b" stroke-width="2.5"/>
+            <circle cx="24" cy="19" r="1.7" fill="#e9b25b"/>
           </svg>
           <span>
             <span class="brand-name">Waypoint</span>
             <span class="brand-sub">Medical Transport</span>
           </span>
         </div>
-        <p>Getting our veterans to their VA appointments, on time and with care. Rides and medical deliveries across Ohio.</p>
-        <span class="footer-vet">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.6 6.3 6.8.5-5.2 4.4 1.6 6.6L12 16.2 6.2 19.8l1.6-6.6-5.2-4.4 6.8-.5z"/></svg>
-          Veteran-Owned Business
-        </span>
+        <p>A service of Noffsinger Transport LLC. Louisville, Ohio. Serving Stark County &amp; Northeast Ohio with safe, on-time medical transportation.</p>
+        <span class="footer-vet">Veteran-owned &amp; operated <svg width="18" height="12" viewBox="0 0 18 12" style="border-radius:2px" aria-hidden="true"><rect width="18" height="12" fill="#fff"/><g fill="#b22234"><rect y="0" width="18" height="1.7"/><rect y="3.4" width="18" height="1.7"/><rect y="6.8" width="18" height="1.7"/><rect y="10.2" width="18" height="1.8"/></g><rect width="7.5" height="6" fill="#3c3b6e"/></svg></span>
       </div>
       <div>
         <h4>Pages</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
+          <li><a href="services.html">Services &amp; Pricing</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="facilities.html">For Facilities</a></li>
+          <li><a href="book.html">Book a Ride</a></li>
+          <li><a href="pay.html">Pay My Fare</a></li>
         </ul>
       </div>
       <div>
         <h4>Get in Touch</h4>
         <ul>
-          <li><a href="tel:+13309427306">(330) 942-7306</a></li>
-          <li><a href="sms:+13309427306">Text us anytime</a></li>
-          <li>Canton, Ohio</li>
+          <li><a href="tel:+13309427306">&#128222; (330) 942-7306</a></li>
+          <li><a href="mailto:noffsingertransport@gmail.com">&#9993;&#65039; noffsingertransport@gmail.com</a></li>
+          <li>Mon-Fri: 5:00 AM to 5:00 PM</li>
+          <li>Sat mornings &middot; Closed Sunday</li>
           <li><a href="https://sam.gov/workspace" target="_blank" rel="noopener">SAM.gov Login</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-legal">
-      <span>&copy; <span id="year">2026</span> Noffsinger Services LLC. Waypoint Medical Transport is a service line of Noffsinger Services LLC, Canton, Ohio.</span>
-      <span>Serving all of Ohio</span>
+      <span>&copy; <span id="year">2026</span> Noffsinger Transport LLC. Waypoint Medical Transport, Louisville, Ohio.</span>
+      <span>Serving Stark County &amp; Northeast Ohio</span>
     </div>
   </div>
 </footer>
+
+<div class="mobile-cta">
+  <a class="m-call" href="tel:+13309427306">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+    Call Now
+  </a>
+  <a class="m-book" href="book.html">Book a Ride</a>
+</div>
 
 <script src="js/main.js"></script>
 </body>
