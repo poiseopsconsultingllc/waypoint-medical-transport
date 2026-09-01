@@ -24,7 +24,7 @@
 
   // Booking form: one-hour time blocks that follow the real hours.
   // Weekdays run 5 AM to 5 PM (last block starts at 4), Saturdays 5 AM
-  // to noon (last block starts at 11), Sunday is closed.
+  // to 12 PM (last block starts at 11), Sunday is closed.
   var dateEl = document.getElementById("f-date");
   var timeEl = document.getElementById("f-time");
   if (dateEl && timeEl) {
@@ -79,7 +79,7 @@
         dateEl.setCustomValidity("");
         buildBlocks(day === 6 ? 11 : 16);
         if (note) note.textContent = day === 6
-          ? "Saturday blocks run 5:00 AM to noon."
+          ? "Saturday blocks run 5:00 AM to 12 PM."
           : noteDefault;
       }
     }
