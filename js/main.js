@@ -15,11 +15,15 @@
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
-  // Booking form: show the thank-you banner after FormSubmit redirects back
+  // Booking form: show the thank-you banner after FormSubmit redirects back,
+  // and tell both ad platforms a booking request just came through.
   var banner = document.getElementById("sent-banner");
   if (banner && window.location.search.indexOf("sent=1") !== -1) {
     banner.classList.add("show");
     banner.scrollIntoView({ block: "center" });
+    window.uetq = window.uetq || [];
+    window.uetq.push("event", "form_submit", {});
+    if (typeof gtag === "function") gtag("event", "form_submit");
   }
 
   // Booking form: one-hour time blocks that follow the real hours.
