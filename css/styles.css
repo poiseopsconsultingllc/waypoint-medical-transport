@@ -1014,6 +1014,12 @@ a { color: inherit; }
 
 .est-link:hover { color: var(--honey); }
 
+/* ---------- Rate sheet request (For Facilities) ---------- */
+
+.rate-panel { max-width: 680px; margin-bottom: 36px; }
+
+.rate-panel[hidden] { display: none; }
+
 /* ---------- Pay now to lock in (shows after the form is sent) ---------- */
 
 .pay-lock {

@@ -55,6 +55,51 @@
     }
   }
 
+  // For Facilities: "Request the Rate Sheet" opens a short form. John gets
+  // the request by email with a reply draft he can paste, then attaches
+  // the rate sheet himself. The PDF is not hosted on the site.
+  var rateToggle = document.getElementById("rate-toggle");
+  var ratePanel = document.getElementById("rate-request");
+  if (rateToggle && ratePanel) {
+    rateToggle.addEventListener("click", function () {
+      var open = ratePanel.hidden;
+      ratePanel.hidden = !open;
+      rateToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open) {
+        var first = document.getElementById("r-name");
+        if (first) first.focus();
+      }
+    });
+  }
+  var rateForm = document.getElementById("rate-form");
+  if (rateForm) {
+    var facSel = document.getElementById("r-facility");
+    var whichWrap = document.getElementById("r-which-wrap");
+    var whichEl = document.getElementById("r-which");
+    function syncWhich() {
+      var yes = facSel.value === "Yes";
+      whichWrap.hidden = !yes;
+      whichEl.required = yes;
+      if (!yes) whichEl.value = "";
+    }
+    facSel.addEventListener("change", syncWhich);
+    syncWhich();
+    rateForm.addEventListener("submit", function () {
+      var name = (document.getElementById("r-name").value || "").trim();
+      var firstName = name.split(/\s+/)[0] || "there";
+      var facility = (whichEl.value || "").trim();
+      var subj = rateForm.querySelector("input[name=_subject]");
+      if (subj) subj.value = "Rate sheet request from " + (name || "the website") + (facility ? ", " + facility : "");
+      var tpl = document.getElementById("r-template");
+      if (tpl) tpl.value = tpl.defaultValue.replace("{first}", firstName);
+    });
+  }
+  var rateSent = document.getElementById("rate-sent");
+  if (rateSent && params.get("sent") === "1") {
+    rateSent.classList.add("show");
+    rateSent.scrollIntoView({ block: "center" });
+  }
+
   // Booking form behavior
   var form = document.getElementById("ride-form");
   if (form) {
