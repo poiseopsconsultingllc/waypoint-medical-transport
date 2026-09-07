@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Healthcare Facilities | Waypoint Medical Transport | Stark County NEMT</title>
-<meta name="description" content="Facility contract rates and monthly billing for dialysis centers, discharge planners and case managers in Stark County, Ohio. Standing orders, on-time morning pickups, same-day discharge transport.">
+<title>Instant Fare Estimate | Waypoint Medical Transport | Stark County NEMT</title>
+<meta name="description" content="See your medical transport fare before you book. Wheelchair and ambulatory rides across Stark County, Ohio, with honest published pricing. Get an instant estimate, then book in one tap.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Waypoint Medical Transport">
-<meta property="og:title" content="For Healthcare Facilities | Waypoint Medical Transport">
-<meta property="og:description" content="Standing orders, on-time morning pickups, same-day discharge transport and the Rescue Line for Stark County facilities. Contract rates and monthly billing available.">
-<meta property="og:url" content="https://gowaypointmedical.com/facilities.html">
+<meta property="og:title" content="Get an Instant Estimate | Waypoint Medical Transport">
+<meta property="og:description" content="See your fare before you book. Honest published pricing for wheelchair and ambulatory rides across Stark County, Ohio.">
+<meta property="og:url" content="https://gowaypointmedical.com/estimate.html">
 <meta property="og:image" content="https://gowaypointmedical.com/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -70,7 +70,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services &amp; Pricing</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="facilities.html" class="active">For Facilities</a></li>
+      <li><a href="facilities.html">For Facilities</a></li>
       <li class="nav-links-pay"><a href="pay.html">Pay My Fare</a></li>
     </ul>
     <a class="nav-phone" href="tel:+13309427306">(330) 942-7306</a>
@@ -86,77 +86,97 @@
 
   <section class="page-hero">
     <div class="wrap">
-      <span class="kicker">For Healthcare Facilities</span>
-      <h1>The Rides That Keep Your Patients on Schedule</h1>
-      <p>Dialysis centers, discharge planners, case managers, and care coordinators: this page is for you.</p>
+      <span class="kicker">Instant Estimate</span>
+      <h1>Get an Instant Estimate</h1>
+      <p>Four quick questions and you'll see your fare before you book. No surprises, no hidden fees.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
-      <span class="kicker">What We Specialize In</span>
-      <h2>Reliable, repeatable, on time.</h2>
-      <div class="cards" style="margin-top: 36px;">
-        <div class="card">
-          <span class="card-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14zM9 14H7v-2h2zm4 0h-2v-2h2zm4 0h-2v-2h2zm-8 4H7v-2h2zm4 0h-2v-2h2z"/></svg></span>
-          <h3>Recurring Standing Orders</h3>
-          <p>Weekly dialysis and therapy schedules set up once and kept, ride after ride, with the same driver whenever possible.</p>
-        </div>
-        <div class="card">
-          <span class="card-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1a11 11 0 1 0 11 11A11 11 0 0 0 12 1zm1 11.6l4.6 2.7-.9 1.5L11 13.5V6h2z"/></svg></span>
-          <h3>On-Time Morning Pickups</h3>
-          <p>Our day starts at 5:00 AM because your first chair time does too. Early riders are the schedule, not an exception to it.</p>
-        </div>
-        <div class="card">
-          <span class="card-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3L2 8v2h20V8zM4 12v6H2v3h20v-3h-2v-6h-3v6h-3v-6h-4v6H7v-6z"/></svg></span>
-          <h3>Same-Day Discharge Transport</h3>
-          <p>Going home safely, the day the doctor says so. We handle the door-through-door part so your bed opens on time.</p>
-        </div>
-      </div>
-      <div class="cta-band" style="margin-top: 44px;">
-        <div>
-          <span class="kicker">The Rescue Line</span>
-          <h2>When your usual transport falls through, call us.</h2>
-          <p>If we can get there, we will. And we answer the phone. Save (330) 942-7306 at the front desk for the day you need it.</p>
-        </div>
-        <div class="cta-actions">
-          <a class="btn btn-gold" href="tel:+13309427306">Save the Rescue Line</a>
-        </div>
+      <div class="est-grid">
+
+        <form id="est-form" class="est-panel" novalidate>
+          <div class="est-q">
+            <span class="q">1. Ride type</span>
+            <div class="choice-row">
+              <label class="choice"><input type="radio" name="ride" value="amb" checked> <span>Ambulatory<small>Walks or uses a walker</small></span></label>
+              <label class="choice"><input type="radio" name="ride" value="wc"> <span>Wheelchair<small>Real wheelchair van, ramp and tie-downs</small></span></label>
+            </div>
+          </div>
+
+          <div class="est-q">
+            <span class="q">2. Trip</span>
+            <div class="choice-row">
+              <label class="choice"><input type="radio" name="trip" value="round" checked> <span>Round trip<small>The return leg is 10% off</small></span></label>
+              <label class="choice"><input type="radio" name="trip" value="one"> <span>One-way<small>Pickup to destination only</small></span></label>
+            </div>
+          </div>
+
+          <div class="est-q">
+            <label class="q" for="miles">3. Miles one way</label>
+            <div class="miles-row">
+              <input id="miles" type="number" min="0" step="1" inputmode="numeric" placeholder="12">
+              <a class="maps-link" href="https://www.google.com/maps/dir/?api=1" target="_blank" rel="noopener">Look it up on Google Maps &rarr;</a>
+            </div>
+            <p class="check-note">Enter the one-way distance from pickup to destination. Round trips count both legs for you.</p>
+          </div>
+
+          <div class="est-q">
+            <span class="q">4. Anything that applies?</span>
+            <div class="check-list">
+              <label><input type="checkbox" id="o-evening"> <span>Evening (6 to 10 PM) or Saturday afternoon</span><span class="tag">+$25</span></label>
+              <label><input type="checkbox" id="o-sunday"> <span>Sunday or major holiday</span><span class="tag">+50% of base, each leg</span></label>
+              <label><input type="checkbox" id="o-sameday"> <span>Same-day booking</span><span class="tag">+$15</span></label>
+              <label><input type="checkbox" id="o-extra"> <span>Extra stop (pharmacy, etc.)</span><span class="tag">+$10</span></label>
+              <label><input type="checkbox" id="o-vet"> <span>Veteran or active military</span><span class="tag">15% off</span></label>
+              <label><input type="checkbox" id="o-founding"> <span>Booking before launch (founding rider)</span><span class="tag">20% off first ride</span></label>
+              <label><input type="checkbox" id="o-pack"> <span>10-ride prepaid package</span><span class="tag">8% off</span></label>
+            </div>
+            <p class="check-note">Best single discount only, never stacked. The evening $25 and the Sunday or holiday 50% never combine. The day rule that fits is the one charged.</p>
+          </div>
+        </form>
+
+        <aside class="est-out" aria-live="polite">
+          <span class="kicker">Your estimate</span>
+          <p id="est-empty" class="est-empty">Enter your one-way miles and your estimate appears right here.</p>
+          <div id="est-result" hidden>
+            <div class="est-total" id="est-total">$0.00</div>
+            <div class="est-perleg" id="est-perleg"></div>
+            <ul class="est-lines" id="est-lines"></ul>
+            <div class="est-free"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>A family member or caregiver rides along free.</div>
+            <p class="est-disclaimer">This is an estimate. John confirms your exact fare when you book. No surprises.</p>
+            <p class="est-disclaimer">Wait time is not included. The first 15 minutes are free, then $15 per 15 minutes, billed after the ride.</p>
+            <a class="btn btn-gold" id="est-book" href="book.html">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14z"/></svg>
+              Book this ride
+            </a>
+          </div>
+        </aside>
+
       </div>
     </div>
   </section>
 
   <section class="section section-paper">
     <div class="wrap">
-      <span class="kicker">Working Together</span>
-      <h2>Contract rates and monthly billing.</h2>
-      <p class="section-intro">Facility contract rates and monthly billing are available for centers with regular transport needs. Call (330) 942-7306 and ask for John, or email <a href="mailto:john@gowaypointmedical.com">john@gowaypointmedical.com</a>. <strong>Service begins the week of November 24, 2026. Facilities can reserve standing-order slots now, at no cost and no obligation.</strong></p>
-      <p style="margin-bottom: 36px;">
-        <a class="btn btn-navy" href="waypoint-rate-sheet.pdf" target="_blank" rel="noopener">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7zM5 18v2h14v-2z"/></svg>
-          Download Our Facility Rate Sheet (PDF)
-        </a>
-      </p>
-      <div class="sam-strip">
-        <span class="sam-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1L2 6v2h20V6zM4 10v7H2v3h20v-3h-2v-7h-3v7h-3v-7h-4v7H7v-7z"/></svg></span>
-        <div class="sam-strip-copy">
-          <h3>Government &amp; agency contracting</h3>
-          <p>Registered on SAM.gov &middot; <strong>UEI TRBJWH9C5DX7</strong>. That's what contracting officers search. Questions? Call the number above and ask for John.</p>
+      <span class="kicker">Good to Know</span>
+      <h2>The estimate follows our published pricing.</h2>
+      <div class="cards" style="margin-top: 36px;">
+        <div class="card">
+          <span class="card-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm-8 0a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm0 2c-2.7 0-8 1.3-8 4v3h8.5a6.8 6.8 0 0 1-.5-2c0-1.9 1.2-3.4 3-4.4A13.7 13.7 0 0 0 8 13zm8 0c-3.3 0-8 1.7-8 5v2h16v-2c0-3.3-4.7-5-8-5z"/></svg></span>
+          <h3>Always free</h3>
+          <p>A family member or caregiver riding along. Walkers, canes, the rider's own oxygen, service animals. Door-through-door help and check-in. A car seat for a grandkid (bring the seat).</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="cta-band">
-        <div>
-          <h2>Let's keep your patients moving.</h2>
-          <p>One call sets up a standing schedule or a same-day rescue run.</p>
+        <div class="card">
+          <span class="card-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4" fill="#122a42"/><path d="M10 13h6M10 17h5" stroke="#122a42" stroke-width="1.6"/></svg></span>
+          <h3>The full rate card</h3>
+          <p>Every number in this estimator matches the pricing on our <a href="services.html">Services &amp; Pricing</a> page. Retail riders are charged only what the website publishes.</p>
         </div>
-        <div class="cta-actions">
-          <a class="btn btn-gold" href="tel:+13309427306">Call &amp; Ask for John</a>
-          <a class="btn btn-ghost" href="mailto:john@gowaypointmedical.com">Email Us</a>
+        <div class="card">
+          <span class="card-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></span>
+          <h3>Rather just ask?</h3>
+          <p>Call or text <a href="tel:+13309427306">(330) 942-7306</a>. John quotes by text and confirms every ride personally.</p>
         </div>
       </div>
     </div>
@@ -237,5 +257,6 @@
 </div>
 
 <script src="js/main.js"></script>
+<script src="js/estimate.js"></script>
 </body>
 </html>

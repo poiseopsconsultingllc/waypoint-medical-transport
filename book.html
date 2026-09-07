@@ -34,9 +34,10 @@
     "@type": "PostalAddress",
     "addressLocality": "Louisville",
     "addressRegion": "OH",
+    "postalCode": "44641",
     "addressCountry": "US"
   },
-  "areaServed": ["Louisville OH", "Canton OH", "North Canton OH", "Massillon OH", "Alliance OH", "Hartville OH", "Stark County OH", "Green OH", "Akron OH"],
+  "areaServed": ["Stark County OH", "Summit County OH", "Portage County OH", "Mahoning County OH", "Columbiana County OH", "Carroll County OH", "Tuscarawas County OH", "Wayne County OH", "Louisville OH", "Canton OH", "North Canton OH", "Massillon OH", "Alliance OH", "Hartville OH", "Green OH", "Akron OH"],
   "openingHours": ["Mo-Fr 05:00-17:00", "Sa 05:00-12:00"],
   "priceRange": "$$"
 }
@@ -93,13 +94,24 @@
 
   <section class="section">
     <div class="wrap">
-      <div id="sent-banner" class="sent-banner">Request received! John will call or text you to confirm your pickup time, destination, and fare. Nothing is booked until you hear from us.</div>
+      <div id="sent-banner" class="sent-banner">Request received! John will text you within the hour with your quote and confirmation. Nothing is booked until you hear from him.</div>
+      <div id="pay-lock" class="pay-lock">
+        <h3>Pay now to lock in your ride</h3>
+        <div class="amt" id="pay-amt">$0.00</div>
+        <p>Pay now to lock in your ride. John confirms your exact fare. If the mileage differs from your estimate, he'll text you before your trip and adjust up or down. No surprises.</p>
+        <div class="pay-actions">
+          <a class="btn btn-gold" id="pay-btn" href="https://square.link/u/P3G8dWrl" target="_blank" rel="noopener">Pay with Square</a>
+          <button type="button" class="btn btn-copy" id="copy-amt">Copy the amount</button>
+        </div>
+        <p>Square asks you to type the amount. Copy it here, then paste it on the Square page. Your receipt is emailed automatically.</p>
+      </div>
       <div class="contact-grid">
 
         <div class="contact-card">
           <h3>Fastest: Call or Text</h3>
           <a class="contact-big-phone" href="tel:+13309427306">(330) 942-7306</a>
           <p class="hours">Mon-Fri from 5:00 AM &middot; Sat: 5:00 AM to 12 PM &middot; Closed Sunday</p>
+          <p class="after-hours">Need a ride outside these hours? Ask about our after-hours service. <a href="tel:+13309427306">(330) 942-7306</a></p>
           <div class="contact-actions">
             <a class="btn btn-gold" href="tel:+13309427306">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
@@ -111,82 +123,169 @@
             </a>
           </div>
           <hr class="contact-divider">
-          <p class="fine">Booking for a parent from out of town? Send the form and John will confirm everything with you and with your family member, so nobody is left guessing. Email works too: <a href="mailto:john@gowaypointmedical.com">john@gowaypointmedical.com</a></p>
+          <p class="fine">Want a number before you book? <a href="estimate.html">Get an instant estimate</a>, then send it straight into this form.</p>
+          <p class="fine" style="margin-top: 12px;">Booking for a parent from out of town? Send the form and John will confirm everything with you and with your family member, so nobody is left guessing. Email works too: <a href="mailto:john@gowaypointmedical.com">john@gowaypointmedical.com</a></p>
         </div>
 
         <div class="form-panel">
           <h3>Booking Form</h3>
-          <p>Send the details and we'll confirm your pickup time, destination, and fare. No surprises.</p>
-          <form action="https://formsubmit.co/john@gowaypointmedical.com" method="POST">
+          <p>Send the details and John will text you your quote and confirmation. No surprises.</p>
+          <form id="ride-form" action="https://formsubmit.co/john@gowaypointmedical.com" method="POST">
             <input type="hidden" name="_subject" value="New ride request from the Waypoint website">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_next" value="https://gowaypointmedical.com/book.html?sent=1">
+            <input type="hidden" name="_autoresponse" value="Got your request! John will text you within the hour with your quote and confirmation. Questions in the meantime? Call or text (330) 942-7306.">
             <input type="text" name="_honey" class="honey-field" tabindex="-1" autocomplete="off">
-            <div class="field-row">
-              <div class="field">
-                <label for="f-name">Your name</label>
-                <input id="f-name" name="Name" type="text" required autocomplete="name">
+            <input type="hidden" id="h-est" name="Estimated fare (from the website estimator)" disabled>
+            <input type="hidden" id="h-detail" name="Estimate details" disabled>
+            <input type="hidden" id="h-miles" name="Miles one way (entered by rider)" disabled>
+
+            <div id="est-card" class="est-card">
+              <div class="est-amt">$0.00</div>
+              <p><span class="est-sum"></span> John confirms your exact fare when you book. No surprises. <a href="estimate.html">Change the estimate</a></p>
+            </div>
+
+            <div class="form-group first">
+              <h4>Who's riding</h4>
+              <div class="field-row">
+                <div class="field">
+                  <label for="f-name">Your name</label>
+                  <input id="f-name" name="Name" type="text" required autocomplete="name">
+                </div>
+                <div class="field">
+                  <label for="f-phone">Phone number</label>
+                  <input id="f-phone" name="Phone" type="tel" required autocomplete="tel">
+                </div>
               </div>
               <div class="field">
-                <label for="f-phone">Phone number</label>
-                <input id="f-phone" name="Phone" type="tel" required autocomplete="tel">
+                <label for="f-email">Email <span class="opt">(for your confirmation, optional)</span></label>
+                <input id="f-email" name="email" type="email" autocomplete="email">
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="f-rider">Rider's name <span class="opt">(if different from you)</span></label>
+                  <input id="f-rider" name="Rider name (if different)" type="text">
+                </div>
+                <div class="field">
+                  <label for="f-rider-phone">Best phone for the rider <span class="opt">(optional)</span></label>
+                  <input id="f-rider-phone" name="Rider phone" type="tel">
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="f-ridetype">Ride type</label>
+                  <select id="f-ridetype" name="Ride type">
+                    <option>Ambulatory (walks or uses a walker)</option>
+                    <option>Wheelchair</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="f-riders">Number of riders</label>
+                  <select id="f-riders" name="Number of riders">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                  </select>
+                </div>
+              </div>
+              <p class="form-hint" style="margin: -8px 0 18px;">We can take two wheelchairs at once.</p>
+              <div class="field-row">
+                <div class="field">
+                  <label for="f-caregiver">Will a family member or caregiver ride along? <span class="opt">(Always free)</span></label>
+                  <select id="f-caregiver" name="Caregiver riding along" required>
+                    <option value="">Pick one</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="f-oxygen">Does the rider use oxygen? <span class="opt">(Rides free, we secure the tank)</span></label>
+                  <select id="f-oxygen" name="Rider uses oxygen" required>
+                    <option value="">Pick one</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                  </select>
+                </div>
               </div>
             </div>
-            <div class="field">
-              <label for="f-pickup">Pickup address</label>
-              <input id="f-pickup" name="Pickup address" type="text" required placeholder="Street, city">
-            </div>
-            <div class="field">
-              <label for="f-dest">Destination</label>
-              <input id="f-dest" name="Destination" type="text" required placeholder="Clinic or facility name, city">
-            </div>
-            <div class="field-row">
+
+            <div class="form-group">
+              <h4>Where and when</h4>
               <div class="field">
-                <label for="f-date">Appointment date</label>
-                <input id="f-date" name="Appointment date" type="date" required>
+                <label for="f-pickup">Pickup address</label>
+                <input id="f-pickup" name="Pickup address" type="text" required placeholder="Street, city">
               </div>
               <div class="field">
-                <label for="f-time">Time block (1 hour)</label>
-                <select id="f-time" name="Time block" required>
-                  <option value="">Pick a block</option>
+                <label for="f-dest">Destination</label>
+                <input id="f-dest" name="Destination" type="text" required placeholder="Clinic or facility name, city">
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="f-date">Appointment date</label>
+                  <input id="f-date" name="Appointment date" type="date" required>
+                </div>
+                <div class="field">
+                  <label for="f-time">What time is your appointment?</label>
+                  <input id="f-time" type="time" required>
+                  <input type="hidden" id="f-time-out" name="Appointment time">
+                </div>
+              </div>
+              <p class="form-hint" id="day-note" style="margin: -6px 0 18px;">John sets your pickup time from your appointment time and confirms it by text. Mon-Fri from 5:00 AM, Sat 5:00 AM to 12 PM, Sunday by advance arrangement. Need a ride outside these hours? Ask about our after-hours service.</p>
+              <div class="field-row">
+                <div class="field">
+                  <label for="f-length">How long is the appointment?</label>
+                  <select id="f-length" name="Appointment length" required>
+                    <option value="">Pick one</option>
+                    <option>About 1 hour</option>
+                    <option>About 2 hours</option>
+                    <option>3+ hours</option>
+                    <option>Not sure</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="f-trip">Trip</label>
+                  <select id="f-trip" name="Trip">
+                    <option>Round trip</option>
+                    <option>One-way</option>
+                    <option>Recurring / standing schedule</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field" id="return-ride">
+                <label>Return ride</label>
+                <div class="radio-list">
+                  <label><input type="radio" name="Return ride" value="Pick me up at a set time"> Pick me up at a set time</label>
+                  <label><input type="radio" name="Return ride" value="I'll call or text when I'm done (will-call)"> I'll call or text when I'm done (will-call)</label>
+                  <label><input type="radio" name="Return ride" value="Please wait for me during the appointment"> <span>Please wait for me during the appointment <span class="opt">(first 15 min free, then $15 per 15 min)</span></span></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <h4>The details</h4>
+              <div class="field">
+                <label for="f-pickupnotes">Pickup notes <span class="opt">(optional)</span></label>
+                <input id="f-pickupnotes" name="Pickup notes" type="text" placeholder="Steps, ramp, gate code, building entrance. Anything that helps us find you.">
+              </div>
+              <div class="field">
+                <label for="f-notes">Notes <span class="opt">(optional)</span></label>
+                <textarea id="f-notes" name="Notes" rows="3" placeholder="Anything else the driver should know"></textarea>
+              </div>
+              <div class="field">
+                <label for="f-hear">How did you hear about us? <span class="opt">(optional)</span></label>
+                <select id="f-hear" name="How did you hear about us">
+                  <option value=""></option>
+                  <option>Google</option>
+                  <option>Facebook</option>
+                  <option>My facility recommended you</option>
+                  <option>A friend or family member</option>
+                  <option>Other</option>
                 </select>
               </div>
             </div>
-            <p class="form-hint" id="day-note" style="margin: -6px 0 18px;">We book in one-hour blocks so every rider gets our full attention. Mon-Fri 5 AM to 5 PM, Sat 5 AM to 12 PM, closed Sunday.</p>
-            <div class="field-row">
-              <div class="field">
-                <label for="f-ridetype">Ride type</label>
-                <select id="f-ridetype" name="Ride type">
-                  <option>Ambulatory (walks or uses a walker)</option>
-                  <option>Wheelchair</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="f-trip">Trip</label>
-                <select id="f-trip" name="Trip">
-                  <option>Round trip</option>
-                  <option>One-way</option>
-                  <option>Recurring / standing schedule</option>
-                </select>
-              </div>
-            </div>
-            <div class="field">
-              <label for="f-notes">Notes</label>
-              <textarea id="f-notes" name="Notes" rows="3" placeholder="Anything the driver should know: mobility help, oxygen, a caregiver riding along..."></textarea>
-            </div>
-            <div class="field">
-              <label for="f-hear">How did you hear about us? <span style="font-weight: 400; color: #55636f;">(optional)</span></label>
-              <select id="f-hear" name="How did you hear about us">
-                <option value=""></option>
-                <option>Google</option>
-                <option>Facebook</option>
-                <option>My facility recommended you</option>
-                <option>A friend or family member</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <button type="submit" class="btn btn-gold" style="width: 100%;">
+
+            <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 8px;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
               Send Ride Request
             </button>
@@ -199,7 +298,7 @@
   </section>
 
   <!-- ================= FAQ ================= -->
-  <section class="section section-paper">
+  <section class="section section-paper" id="faq">
     <div class="wrap">
       <span class="kicker">FAQ</span>
       <h2>Questions families ask.</h2>
@@ -222,7 +321,7 @@
         </details>
         <details>
           <summary>How do I pay?</summary>
-          <p>By card when you book. You or a family member can pay from anywhere using our <a href="pay.html">Pay My Fare</a> page. Cash accepted in person.</p>
+          <p>By card when you book. You or a family member can pay from anywhere using our <a href="pay.html">Pay My Fare</a> page. Cash accepted in person. Want to know the number first? <a href="estimate.html">Get an instant estimate.</a></p>
         </details>
         <details>
           <summary>What if my appointment runs long?</summary>
@@ -241,6 +340,18 @@
   </section>
 
 </main>
+
+<section class="trust-strip" aria-label="Why families trust Waypoint">
+  <div class="wrap">
+    <ul class="badge-row">
+      <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>Veteran-Owned &amp; Operated</li>
+      <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>Fully Insured</li>
+      <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>CPR-Certified</li>
+      <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>Background-Checked</li>
+      <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>Locally Owned in Louisville</li>
+    </ul>
+  </div>
+</section>
 
 <footer class="site-footer">
   <div class="wrap">
@@ -263,9 +374,11 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Services &amp; Pricing</a></li>
+          <li><a href="estimate.html">Get an Estimate</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="facilities.html">For Facilities</a></li>
           <li><a href="book.html">Book a Ride</a></li>
+          <li><a href="book.html#faq">FAQ</a></li>
           <li><a href="pay.html">Pay My Fare</a></li>
         </ul>
       </div>
@@ -273,9 +386,11 @@
         <h4>Get in Touch</h4>
         <ul>
           <li><a href="tel:+13309427306">&#128222; (330) 942-7306</a></li>
+          <li><a href="sms:+13309427306">&#128172; Text us anytime: (330) 942-7306</a></li>
           <li><a href="mailto:john@gowaypointmedical.com">&#9993;&#65039; john@gowaypointmedical.com</a></li>
           <li>Mon-Fri: 5:00 AM to 5:00 PM</li>
           <li>Sat: 5:00 AM to 12 PM &middot; Closed Sunday</li>
+          <li class="after-hours">Need a ride outside these hours? Ask about our after-hours service. <a href="tel:+13309427306">(330) 942-7306</a></li>
         </ul>
       </div>
     </div>
@@ -289,7 +404,11 @@
 <div class="mobile-cta">
   <a class="m-call" href="tel:+13309427306">
     <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
-    Call Now
+    Call
+  </a>
+  <a class="m-text" href="sms:+13309427306">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/></svg>
+    Text
   </a>
   <a class="m-book" href="#top">Book a Ride</a>
 </div>

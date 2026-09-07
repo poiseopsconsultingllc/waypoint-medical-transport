@@ -34,9 +34,10 @@
     "@type": "PostalAddress",
     "addressLocality": "Louisville",
     "addressRegion": "OH",
+    "postalCode": "44641",
     "addressCountry": "US"
   },
-  "areaServed": ["Louisville OH", "Canton OH", "North Canton OH", "Massillon OH", "Alliance OH", "Hartville OH", "Stark County OH", "Green OH", "Akron OH"],
+  "areaServed": ["Stark County OH", "Summit County OH", "Portage County OH", "Mahoning County OH", "Columbiana County OH", "Carroll County OH", "Tuscarawas County OH", "Wayne County OH", "Louisville OH", "Canton OH", "North Canton OH", "Massillon OH", "Alliance OH", "Hartville OH", "Green OH", "Akron OH"],
   "openingHours": ["Mo-Fr 05:00-17:00", "Sa 05:00-12:00"],
   "priceRange": "$$"
 }
@@ -150,21 +151,34 @@
             <tr><th>Service</th><th style="text-align: right;">Rate</th></tr>
           </thead>
           <tbody>
-            <tr><td>Ambulatory ride, base fare (includes first 5 miles)</td><td>$45</td></tr>
-            <tr><td>Each additional mile</td><td>$2.50</td></tr>
-            <tr><td>Wheelchair transport, base fare</td><td>$80</td></tr>
-            <tr><td>Each additional mile</td><td>$3.50</td></tr>
-            <tr><td>Wait time (we stay during short appointments)</td><td>$15 per 15 min<br><span style="font-weight: 500; color: #55636f; font-size: 15px;">first 15 free</span></td></tr>
+            <tr><td>Ambulatory ride, base fare per leg (includes the first 5 miles)</td><td>$45</td></tr>
+            <tr><td>Each additional mile, ambulatory</td><td>$2.50</td></tr>
+            <tr><td>Wheelchair transport, base fare per leg (all miles billed from mile one)</td><td>$80</td></tr>
+            <tr><td>Each mile, wheelchair</td><td>$3.50</td></tr>
+            <tr><td>Long trips, over 25 miles one way (the per-mile rate drops)</td><td>$2.00/mi ambulatory<br><span style="font-weight: 500; color: #55636f; font-size: 15px;">$3.00/mi wheelchair</span></td></tr>
             <tr><td>Round trip</td><td>10% off the return leg</td></tr>
-            <tr><td>Evenings (after 6 PM) and Saturdays</td><td>+ $15</td></tr>
-            <tr><td>Long trips, over 25 miles</td><td>$2.00/mi ambulatory<br><span style="font-weight: 500; color: #55636f; font-size: 15px;">$3.00/mi wheelchair</span></td></tr>
-            <tr><td>Extra stop on the way (pharmacy, etc.)</td><td>$10</td></tr>
+            <tr><td>Evening rides (6 PM to 10 PM, book ahead)</td><td>+ $25 per trip</td></tr>
+            <tr><td>Saturday afternoon (after 12 PM, by arrangement)</td><td>+ $25 per trip</td></tr>
+            <tr><td>Sunday (by advance arrangement only)</td><td>+ 50% of base fare<br><span style="font-weight: 500; color: #55636f; font-size: 15px;">each leg</span></td></tr>
+            <tr><td>Major holidays (Thanksgiving, Christmas Eve and Day, New Year's Day, Easter; by advance arrangement)</td><td>+ 50% of base fare<br><span style="font-weight: 500; color: #55636f; font-size: 15px;">each leg</span></td></tr>
+            <tr><td>Same-day booking (when we can fit you in)</td><td>+ $15</td></tr>
+            <tr><td>Extra stop on the way (pharmacy, etc.)</td><td>+ $10</td></tr>
+            <tr><td>Wait time (first 15 minutes free, billed after the ride)</td><td>$15 per 15 min</td></tr>
             <tr><td>Veterans &amp; active military</td><td>15% off</td></tr>
+            <tr><td>Founding riders (book before launch)</td><td>20% off first ride</td></tr>
             <tr><td>10-Ride Package (prepaid)</td><td>save 8%</td></tr>
           </tbody>
         </table>
       </div>
+      <p class="price-note">The evening or Saturday $25 and the Sunday or holiday 50% never combine. The day rule that applies is the one charged. Discounts apply after everything else, best one only, never stacked. Wait time is billed after the ride, never in the upfront quote.</p>
+      <p class="price-note">Anything unusual (bariatric, stairs, two-person assist) gets named and agreed at booking, or it doesn't get charged.</p>
       <p class="price-note">We accept all major credit and debit cards, cash, and payment by family members from anywhere through the <a href="pay.html">Pay My Fare</a> page. Facility and contract rates are available; see <a href="facilities.html">For Facilities</a>.</p>
+      <p style="margin-top: 26px;">
+        <a class="btn btn-gold" href="estimate.html">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 3v3h10V5zm0 6v2h2v-2zm4 0v2h2v-2zm4 0v2h2v-2zm-8 4v2h2v-2zm4 0v2h2v-2zm4 0v2h2v-2z"/></svg>
+          Get an Instant Estimate
+        </a>
+      </p>
     </div>
   </section>
 
@@ -175,7 +189,7 @@
       <h2>Never on the bill.</h2>
       <ul class="ride-list" style="margin-top: 30px;">
         <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg><span>A <strong>family member or caregiver</strong> rides along, free</span></li>
-        <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg><span><strong>Walkers, canes, oxygen, service animals</strong>, free</span></li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg><span><strong>Walkers, canes, the rider's own oxygen, service animals</strong>, free</span></li>
         <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg><span><strong>Door-through-door assistance and check-in walk-in</strong>, included with every ride</span></li>
         <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg><span><strong>Car seat for a grandkid tagging along</strong>, free (bring the seat)</span></li>
       </ul>
@@ -210,6 +224,7 @@
         <span>Monday-Friday from 5:00 AM (early dialysis riders, we've got you)</span>
         <span>Saturdays 5:00 AM to 12 PM</span>
         <span>Sunday closed</span>
+        <span class="after-hours">Need a ride outside these hours? Ask about our after-hours service. <a href="tel:+13309427306">(330) 942-7306</a></span>
       </div>
     </div>
   </section>
@@ -232,6 +247,18 @@
 
 </main>
 
+<section class="trust-strip" aria-label="Why families trust Waypoint">
+  <div class="wrap">
+    <ul class="badge-row">
+      <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>Veteran-Owned &amp; Operated</li>
+      <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>Fully Insured</li>
+      <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>CPR-Certified</li>
+      <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>Background-Checked</li>
+      <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>Locally Owned in Louisville</li>
+    </ul>
+  </div>
+</section>
+
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
@@ -253,9 +280,11 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Services &amp; Pricing</a></li>
+          <li><a href="estimate.html">Get an Estimate</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="facilities.html">For Facilities</a></li>
           <li><a href="book.html">Book a Ride</a></li>
+          <li><a href="book.html#faq">FAQ</a></li>
           <li><a href="pay.html">Pay My Fare</a></li>
         </ul>
       </div>
@@ -263,9 +292,11 @@
         <h4>Get in Touch</h4>
         <ul>
           <li><a href="tel:+13309427306">&#128222; (330) 942-7306</a></li>
+          <li><a href="sms:+13309427306">&#128172; Text us anytime: (330) 942-7306</a></li>
           <li><a href="mailto:john@gowaypointmedical.com">&#9993;&#65039; john@gowaypointmedical.com</a></li>
           <li>Mon-Fri: 5:00 AM to 5:00 PM</li>
           <li>Sat: 5:00 AM to 12 PM &middot; Closed Sunday</li>
+          <li class="after-hours">Need a ride outside these hours? Ask about our after-hours service. <a href="tel:+13309427306">(330) 942-7306</a></li>
         </ul>
       </div>
     </div>
@@ -279,7 +310,11 @@
 <div class="mobile-cta">
   <a class="m-call" href="tel:+13309427306">
     <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
-    Call Now
+    Call
+  </a>
+  <a class="m-text" href="sms:+13309427306">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/></svg>
+    Text
   </a>
   <a class="m-book" href="book.html">Book a Ride</a>
 </div>
