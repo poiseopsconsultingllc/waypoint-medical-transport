@@ -64,29 +64,41 @@
     };
 
     var lines = [];
-    var longTrip = miles > RATES.longTripOver;
+    // Mileage is tiered: only the miles PAST 25 one way get the long-trip
+    // rate. Wheelchair bills every mile; ambulatory includes the first 5.
     var billable = Math.max(0, miles - r.included);
-    var rate = longTrip ? r.longPerMile : r.perMile;
-    var legMiles = round2(billable * rate);
-    var legFare = r.base + legMiles;
+    var stdCap = RATES.longTripOver - r.included;
+    var stdMiles = Math.min(billable, stdCap);
+    var longMiles = Math.max(0, billable - stdCap);
+    var stdCost = round2(stdMiles * r.perMile);
+    var longCost = round2(longMiles * r.longPerMile);
+    var legFare = round2(r.base + stdCost + longCost);
+    var longTrip = longMiles > 0;
 
     lines.push([r.label + " base fare, per leg", money(r.base)]);
     if (r.included && miles <= r.included) {
       lines.push(["First " + r.included + " miles included", "$0.00"]);
-    } else if (billable > 0) {
-      var milesLabel = (r.included ? billable + " miles past the first " + r.included : billable + " miles") + " x " + money(rate);
-      if (longTrip) milesLabel += " (long-trip rate)";
-      lines.push([milesLabel, money(legMiles)]);
+    } else {
+      if (stdMiles > 0) {
+        lines.push([(r.included ? stdMiles + " miles past the first " + r.included : stdMiles + " miles") + " x " + money(r.perMile), money(stdCost)]);
+      }
+      if (longMiles > 0) {
+        lines.push([longMiles + " miles past " + RATES.longTripOver + " x " + money(r.longPerMile) + " (long-trip rate)", money(longCost)]);
+      }
     }
 
-    var sundayAdd = opts.sunday ? round2(r.base * RATES.sundayPct) : 0;
-    if (opts.sunday) lines.push(["Sunday or holiday, +50% of base", money(sundayAdd)]);
-
-    var leg1 = round2(legFare + sundayAdd);
-    var leg2 = round ? round2((legFare + sundayAdd) * (1 - RATES.returnLegOff)) : 0;
+    // Round trip: the return leg is 10% off the FARE only.
+    var leg1 = legFare;
+    var leg2 = round ? round2(legFare * (1 - RATES.returnLegOff)) : 0;
     if (round) lines.push(["Return leg, 10% off", money(leg2)]);
 
-    var addons = 0;
+    // Sunday or holiday: half the base fare for every leg, added after the
+    // return discount so it is never discounted.
+    var legs = round ? 2 : 1;
+    var sundayAdd = opts.sunday ? round2(r.base * RATES.sundayPct * legs) : 0;
+    if (opts.sunday) lines.push(["Sunday or holiday, +50% of base" + (round ? " x 2 legs" : ""), money(sundayAdd)]);
+
+    var addons = sundayAdd;
     if (opts.evening && !opts.sunday) {
       addons += RATES.evening;
       lines.push(["Evening or Saturday afternoon", money(RATES.evening)]);
