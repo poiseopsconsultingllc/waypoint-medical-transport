@@ -94,7 +94,7 @@
 
   <section class="section">
     <div class="wrap">
-      <div id="sent-banner" class="sent-banner">Request received! John will text you within the hour with your quote and confirmation. Nothing is booked until you hear from him.</div>
+      <div id="sent-banner" class="sent-banner">Request received! John will text you with your quote and confirmation, within the hour during business hours (Mon-Fri from 5 AM, Sat 5 AM to 12 PM). Requests sent overnight get a reply first thing in the morning. Nothing is booked until you hear from him.</div>
       <div id="pay-lock" class="pay-lock">
         <h3>Pay now to lock in your ride</h3>
         <div class="amt" id="pay-amt">$0.00</div>
@@ -133,9 +133,9 @@
           <form id="ride-form" action="https://formsubmit.co/john@gowaypointmedical.com" method="POST">
             <input type="hidden" name="_subject" value="New ride request from the Waypoint website">
             <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_captcha" value="true">
             <input type="hidden" name="_next" value="https://gowaypointmedical.com/book.html?sent=1">
-            <input type="hidden" name="_autoresponse" value="Got your request! John will text you within the hour with your quote and confirmation. Questions in the meantime? Call or text (330) 942-7306.">
+            <input type="hidden" name="_autoresponse" value="Got your request! John will text you with your quote and confirmation, within the hour during business hours (Mon-Fri from 5 AM, Sat 5 AM to 12 PM). Requests sent overnight get a reply first thing in the morning. Questions in the meantime? Call or text (330) 942-7306.">
             <input type="text" name="_honey" class="honey-field" tabindex="-1" autocomplete="off">
             <input type="hidden" id="h-est" name="Estimated fare (from the website estimator)" disabled>
             <input type="hidden" id="h-detail" name="Estimate details" disabled>
