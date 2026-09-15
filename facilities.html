@@ -148,6 +148,7 @@
           <input type="hidden" name="_next" value="https://gowaypointmedical.com/facilities.html?sent=1">
           <input type="hidden" name="_autoresponse" value="Got your request! John will email you the Waypoint facility rate sheet shortly. Questions in the meantime? Call or text (330) 942-7306.">
           <input type="text" name="_honey" class="honey-field" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="_form" value="ratesheet">
           <input type="hidden" id="r-template" name="Reply draft (hit Reply, paste this, attach the rate sheet)" value="Hi {first},
 
 Thanks for reaching out about Waypoint Medical Transport. I've attached our facility rate sheet. It covers our contract and group rates, monthly invoicing, and how we handle cancellations, no-shows, and after-hours rides.
@@ -189,10 +190,12 @@ gowaypointmedical.com">
             <label for="r-which">Which facility?</label>
             <input id="r-which" name="Which facility" type="text" placeholder="Facility name, city">
           </div>
+          <div class="captcha-slot" id="rate-captcha" hidden></div>
           <button type="submit" class="btn btn-gold" style="width: 100%;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
             Send Request
           </button>
+          <p class="form-status" id="rate-status" hidden></p>
           <p class="form-hint">Contract rates are for healthcare facilities. Riders and families can see our published pricing on the <a href="services.html">Services &amp; Pricing</a> page.</p>
         </form>
       </div>
@@ -295,6 +298,7 @@ gowaypointmedical.com">
   <a class="m-book" href="book.html">Book a Ride</a>
 </div>
 
+<script src="js/forms-config.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

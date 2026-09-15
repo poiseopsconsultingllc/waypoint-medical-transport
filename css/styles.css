@@ -705,6 +705,14 @@ a { color: inherit; }
 
 .honey-field { display: none; }
 
+.captcha-slot { margin: 4px 0 16px; }
+
+.captcha-slot[hidden], .field[hidden] { display: none; }
+
+.form-status { margin-top: 12px; font-size: 15.5px; font-weight: 600; color: var(--navy-2); }
+
+.form-status.is-error { color: #a12d2d; }
+
 .sent-banner {
   display: none;
   background: #e8f3e4;

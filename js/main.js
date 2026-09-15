@@ -18,7 +18,76 @@
   var params = new URLSearchParams(window.location.search);
   function money(n) { return "$" + Number(n).toFixed(2); }
 
-  // Booking form: show the thank-you banner after FormSubmit redirects back,
+  // ------------------------------------------------------------------
+  // Website forms. When js/forms-config.js holds John's Apps Script URL
+  // and reCAPTCHA site key, both forms post there (inside his HIPAA-covered
+  // Google Workspace) and this page redirects itself to the thank-you view.
+  // With the config empty, the forms fall back to their plain HTML action.
+  // ------------------------------------------------------------------
+  var FORMS = window.WAYPOINT_FORMS || {};
+  var formsLive = !!(FORMS.endpoint && FORMS.recaptchaSiteKey);
+  var captchaWidgets = [];
+
+  window.waypointCaptchaReady = function () {
+    captchaWidgets.forEach(function (w) {
+      if (w.widgetId === null) w.widgetId = grecaptcha.render(w.holder, { sitekey: FORMS.recaptchaSiteKey });
+    });
+  };
+
+  if (formsLive && document.querySelector(".captcha-slot")) {
+    var api = document.createElement("script");
+    api.src = "https://www.google.com/recaptcha/api.js?onload=waypointCaptchaReady&render=explicit";
+    api.async = true;
+    api.defer = true;
+    document.head.appendChild(api);
+  }
+
+  function say(el, text, isError) {
+    if (!el) return;
+    el.textContent = text;
+    el.hidden = !text;
+    el.classList.toggle("is-error", !!isError);
+  }
+
+  // Sends a form to the Apps Script endpoint and moves on to nextUrl().
+  // Registered AFTER each form's own submit listener, so the fields those
+  // listeners fill in (appointment time in words, the estimate) are ready.
+  function wireForm(form, kind, holder, status, nextUrl) {
+    if (!formsLive || !form || !holder) return;
+    var widget = { holder: holder, widgetId: null };
+    captchaWidgets.push(widget);
+    holder.hidden = false;
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (widget.widgetId === null || !grecaptcha.getResponse(widget.widgetId)) {
+        say(status, "Please check the \"I'm not a robot\" box first.", true);
+        return;
+      }
+      var btn = form.querySelector("button[type=submit]");
+      var label = btn ? btn.innerHTML : "";
+      if (btn) { btn.disabled = true; btn.textContent = "Sending..."; }
+      say(status, "", false);
+
+      var data = new FormData(form);
+      data.set("_form", kind);
+      fetch(FORMS.endpoint, { method: "POST", body: data })
+        .then(function (r) { return r.json(); })
+        .then(function (res) {
+          if (res && res.ok) { window.location.href = nextUrl(); return; }
+          throw new Error(res && res.error === "captcha" ? "captcha" : "server");
+        })
+        .catch(function (err) {
+          if (btn) { btn.disabled = false; btn.innerHTML = label; }
+          if (typeof grecaptcha !== "undefined" && widget.widgetId !== null) grecaptcha.reset(widget.widgetId);
+          say(status, err && err.message === "captcha"
+            ? "The robot check didn't go through. Please tick the box again and resend."
+            : "We couldn't send that just now. Please call or text (330) 942-7306 and we'll take it by phone.", true);
+        });
+    });
+  }
+
+  // Booking form: show the thank-you banner after the redirect back,
   // and tell both ad platforms a booking request just came through.
   // If the rider came from the estimator, "est" carries their number so they
   // can pay it right away and lock the ride in.
@@ -93,6 +162,9 @@
       var tpl = document.getElementById("r-template");
       if (tpl) tpl.value = tpl.defaultValue.replace("{first}", firstName);
     });
+    wireForm(rateForm, "ratesheet", document.getElementById("rate-captcha"), document.getElementById("rate-status"), function () {
+      return "facilities.html?sent=1";
+    });
   }
   var rateSent = document.getElementById("rate-sent");
   if (rateSent && params.get("sent") === "1") {
@@ -109,6 +181,8 @@
     var tripEl = document.getElementById("f-trip");
     var rideEl = document.getElementById("f-ridetype");
     var returnBox = document.getElementById("return-ride");
+    var wcWrap = document.getElementById("f-wctype-wrap");
+    var wcEl = document.getElementById("f-wctype");
     var note = document.getElementById("day-note");
     var noteDefault = note ? note.textContent : "";
     var pad = function (n) { return n < 10 ? "0" + n : "" + n; };
@@ -162,6 +236,16 @@
     }
     if (tripEl) tripEl.addEventListener("change", syncReturn);
 
+    // Wheelchair type only matters for wheelchair rides
+    function syncWheelchair() {
+      if (!rideEl || !wcWrap || !wcEl) return;
+      var wc = rideEl.value.indexOf("Wheelchair") === 0;
+      wcWrap.hidden = !wc;
+      wcEl.required = wc;
+      if (!wc) wcEl.value = "";
+    }
+    if (rideEl) rideEl.addEventListener("change", syncWheelchair);
+
     // Came here from the estimator? Carry the estimate in with them.
     var estTotal = parseFloat(params.get("est"));
     if (estTotal > 0 && params.get("sent") !== "1") {
@@ -193,8 +277,12 @@
       }
     }
     syncReturn();
+    syncWheelchair();
 
     // Send the estimate along to the thank-you page so they can pay it
+    var thankYou = function () {
+      return "book.html?sent=1" + (estTotal > 0 ? "&est=" + estTotal.toFixed(2) : "");
+    };
     form.addEventListener("submit", function () {
       if (timeEl && timeOut && timeEl.value) timeOut.value = timeWords(timeEl.value);
       var next = form.querySelector("input[name=_next]");
@@ -202,5 +290,6 @@
         next.value = "https://gowaypointmedical.com/book.html?sent=1&est=" + estTotal.toFixed(2);
       }
     });
+    wireForm(form, "booking", document.getElementById("book-captcha"), document.getElementById("book-status"), thankYou);
   }
 })();

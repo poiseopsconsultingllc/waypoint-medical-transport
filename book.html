@@ -137,6 +137,7 @@
             <input type="hidden" name="_next" value="https://gowaypointmedical.com/book.html?sent=1">
             <input type="hidden" name="_autoresponse" value="Got your request! John will text you with your quote and confirmation, within the hour during business hours (Mon-Fri from 5 AM, Sat 5 AM to 12 PM). Requests sent overnight get a reply first thing in the morning. Questions in the meantime? Call or text (330) 942-7306.">
             <input type="text" name="_honey" class="honey-field" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="_form" value="booking">
             <input type="hidden" id="h-est" name="Estimated fare (from the website estimator)" disabled>
             <input type="hidden" id="h-detail" name="Estimate details" disabled>
             <input type="hidden" id="h-miles" name="Miles one way (entered by rider)" disabled>
@@ -190,6 +191,20 @@
                 </div>
               </div>
               <p class="form-hint" style="margin: -8px 0 18px;">We can take two wheelchairs at once.</p>
+              <div class="field" id="f-wctype-wrap" hidden>
+                <label for="f-wctype">What kind of wheelchair does the rider use?</label>
+                <select id="f-wctype" name="Wheelchair type">
+                  <option value="">Pick one</option>
+                  <option>Manual wheelchair (someone pushes it)</option>
+                  <option>Transport chair (small wheels)</option>
+                  <option>Power wheelchair (motorized)</option>
+                  <option>Heavy duty or bariatric</option>
+                  <option>Mobility scooter</option>
+                  <option>They don't have one and need one provided</option>
+                  <option>Not sure</option>
+                </select>
+                <p class="form-hint" style="margin-top: 8px;">This helps us make sure the right equipment is ready for you.</p>
+              </div>
               <div class="field-row">
                 <div class="field">
                   <label for="f-caregiver">Will a family member or caregiver ride along? <span class="opt">(Always free)</span></label>
@@ -215,6 +230,16 @@
               <div class="field">
                 <label for="f-pickup">Pickup address</label>
                 <input id="f-pickup" name="Pickup address" type="text" required placeholder="Street, city">
+              </div>
+              <div class="field">
+                <label for="f-steps">Is there a step-free path from the door to the driveway or curb?</label>
+                <select id="f-steps" name="Step-free path to the vehicle" required>
+                  <option value="">Pick one</option>
+                  <option>Yes, step free</option>
+                  <option>1 to 2 steps</option>
+                  <option>3 or more steps</option>
+                  <option>Not sure</option>
+                </select>
               </div>
               <div class="field">
                 <label for="f-dest">Destination</label>
@@ -285,10 +310,12 @@
               </div>
             </div>
 
+            <div class="captcha-slot" id="book-captcha" hidden></div>
             <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 8px;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
               Send Ride Request
             </button>
+            <p class="form-status" id="book-status" hidden></p>
             <p class="form-hint">Your request goes straight to John. He confirms every ride personally before it goes on the schedule.</p>
           </form>
         </div>
@@ -413,6 +440,7 @@
   <a class="m-book" href="#top">Book a Ride</a>
 </div>
 
+<script src="js/forms-config.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
