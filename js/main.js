@@ -19,10 +19,9 @@
   function money(n) { return "$" + Number(n).toFixed(2); }
 
   // ------------------------------------------------------------------
-  // Website forms. When js/forms-config.js holds John's Apps Script URL
-  // and reCAPTCHA site key, both forms post there (inside his HIPAA-covered
+  // Website forms. js/forms-config.js holds John's Apps Script URL and
+  // reCAPTCHA site key. Both forms post there (inside his HIPAA-covered
   // Google Workspace) and this page redirects itself to the thank-you view.
-  // With the config empty, the forms fall back to their plain HTML action.
   // ------------------------------------------------------------------
   var FORMS = window.WAYPOINT_FORMS || {};
   var formsLive = !!(FORMS.endpoint && FORMS.recaptchaSiteKey);
@@ -153,15 +152,6 @@
     }
     facSel.addEventListener("change", syncWhich);
     syncWhich();
-    rateForm.addEventListener("submit", function () {
-      var name = (document.getElementById("r-name").value || "").trim();
-      var firstName = name.split(/\s+/)[0] || "there";
-      var facility = (whichEl.value || "").trim();
-      var subj = rateForm.querySelector("input[name=_subject]");
-      if (subj) subj.value = "Rate sheet request from " + (name || "the website") + (facility ? ", " + facility : "");
-      var tpl = document.getElementById("r-template");
-      if (tpl) tpl.value = tpl.defaultValue.replace("{first}", firstName);
-    });
     wireForm(rateForm, "ratesheet", document.getElementById("rate-captcha"), document.getElementById("rate-status"), function () {
       return "facilities.html?sent=1";
     });
@@ -285,10 +275,6 @@
     };
     form.addEventListener("submit", function () {
       if (timeEl && timeOut && timeEl.value) timeOut.value = timeWords(timeEl.value);
-      var next = form.querySelector("input[name=_next]");
-      if (next && estTotal > 0) {
-        next.value = "https://gowaypointmedical.com/book.html?sent=1&est=" + estTotal.toFixed(2);
-      }
     });
     wireForm(form, "booking", document.getElementById("book-captcha"), document.getElementById("book-status"), thankYou);
   }

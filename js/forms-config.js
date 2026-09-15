@@ -1,8 +1,8 @@
-// Where the website forms go. Both values come from John's Google account.
-// Leave both empty and the forms keep posting to their plain HTML action.
-// Fill both in and the forms post to John's Google Apps Script instead
-// (inside his HIPAA-covered Google Workspace) with a reCAPTCHA check.
+// Where the website forms go. Both values come from John's Google account
+// and both are required: the booking form and the rate sheet request form
+// post to John's Google Apps Script (inside his HIPAA-covered Google
+// Workspace) after a reCAPTCHA check. See main.js, wireForm().
 window.WAYPOINT_FORMS = {
-  endpoint: "",          // Apps Script web app URL, ends in /exec
-  recaptchaSiteKey: ""   // reCAPTCHA v2 "I'm not a robot" site key (the public one)
+  endpoint: "https://script.google.com/macros/s/AKfycbzWZZ2uMldRRqYkKmOelIBiurj0kY_YbgdRPBlRG3K5XcsC-P7VToKnEKuhYesH2MQy/exec",
+  recaptchaSiteKey: "6LelkL0tAAAAAGlApbwiz1MswfhAwcBZywi17fAJ"
 };
